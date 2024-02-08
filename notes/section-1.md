@@ -49,3 +49,12 @@ But the important thing to note that it import index.jsx too in script tag.
 ```
 index.html is served where index.jsx is imported in script tag and in index.jsx App.jsx is imported.
 
+
+## Dynamic Values
+
+Curly Braces {} - to output dynamic values between elements tags or also value for an attribute.
+
+### Important
+
+if-statements, for-loops, function definitions and other block statements are not allowed in curly braces. Only expressions that directly produce a value.
+
