@@ -13,6 +13,8 @@ Skipped
 
 # Section 3 - React Essentials
 
+React Components are just React Functions which returns JSX.
+
 Components, JSX & State
 
     - Building User Interfaces With Components
