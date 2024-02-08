@@ -36,6 +36,16 @@ JSX stands for JavaScript Syntax Extension
     - Recommended to pick a name that describes the UI Building block
     - Returns 'Renderable Content', in most cases JSX
 
-```
+All tags in HTML starts with lowercase, so it makes easy to identify and work with custom components.
+
+After creating my first component when saw the source code I saw nothing. No header HTML was rendered.
+
+Only one div in body and that was root.
+
+But the important thing to note that it import index.jsx too in script tag.
 
 ```
+<script type="module" src="/src/index.jsx"></script>
+```
+index.html is served where index.jsx is imported in script tag and in index.jsx App.jsx is imported.
+
