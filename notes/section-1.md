@@ -47,6 +47,7 @@ But the important thing to note that it import index.jsx too in script tag.
 ```
 <script type="module" src="/src/index.jsx"></script>
 ```
+
 index.html is served where index.jsx is imported in script tag and in index.jsx App.jsx is imported.
 
 
@@ -58,3 +59,30 @@ Curly Braces {} - to output dynamic values between elements tags or also value f
 
 if-statements, for-loops, function definitions and other block statements are not allowed in curly braces. Only expressions that directly produce a value.
 
+## Making Components Resusable With Props
+
+Think props as arguments in functions. We can pass numbers of props but we accept it as only one.
+
+```
+<CoreConcept
+    title="Components"
+    description="The core UI building block"
+    image={componentsImg}
+/>
+```
+
+Here I've passed three props, but below on the component I'm just accepting one parameter. It's called props. But I could name anyting.
+
+```
+function CoreConcept(props) {  // Here I can also do Object Destructuring eg. function CoreConcept({image, title, description})
+  return (
+    <li>
+      <img src="" alt="" />
+      <h3>Title</h3>
+      <p>Description</p>
+    </li>
+  );
+}
+```
+
+The props will be an object with key value pairs.
