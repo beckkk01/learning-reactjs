@@ -86,3 +86,35 @@ function CoreConcept(props) {  // Here I can also do Object Destructuring eg. fu
 ```
 
 The props will be an object with key value pairs.
+
+Every Custom Components will recieve props.
+
+Pass contents between the Custom Components. Eg.
+
+```
+<TabButton>Example 1</TabButton>
+```
+
+When recieving, 
+
+```
+export default function TabButton(props){
+    return(
+        <>
+            <p>{props.children}</p>
+        </>
+    )
+}
+```
+
+We get special built in children prop. This is set by react and not passed as attributes in Custom Components. It simply refers the content
+between the component.
+
+```
+This way of building components where components can wrap other components or contents is called Component Composition.
+```
+
+## Rules Of Hooks
+This should only be called on top level of component
+    - must not be called outside of React Component Functions
+    - must not be called in nested code statement. (eg. inside of If Statements)
