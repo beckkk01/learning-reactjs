@@ -19,7 +19,6 @@ function App() {
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
-    console.log(selectedTopic);
   }
 
   return (
@@ -28,28 +27,38 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
+          {/* {[<p>Hello</p>, <p>World</p>, <p>Another one</p>]} JSX can also capable of outputting arrays of JSX elements*/}
+          {/* if the value source will be changed, the code will break, suppose we removed CORE_CONCEPTS[3] */}
+          {/* We can spread when key value pairs are same */}
           <ul>
-            <CoreConcept
+            {/* <CoreConcept
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             />
-            {/* We can spread when key value pairs are same */}
+            
             <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} /> */}
+
+            {CORE_CONCEPTS.map((conceptItem) => {
+              // return <CoreConcept key={conceptItem.title} title={conceptItem.title} description={conceptItem.description} image={conceptItem.image} />
+              return <CoreConcept key={conceptItem.title} {...conceptItem} />
+            })}
+
           </ul>
         </section>
 
         <section id="examples">
           <h2>Examples</h2>
+          
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>
+            <TabButton isSelected={selectedTopic === 'components'} onSelect={() => handleSelect("components")}>
               Components
             </TabButton>
-            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+            <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton isSelected={selectedTopic === 'props'} onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton isSelected={selectedTopic === 'state'} onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
 
           {!selectedTopic ? (
