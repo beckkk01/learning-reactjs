@@ -118,3 +118,50 @@ This way of building components where components can wrap other components or co
 This should only be called on top level of component
     - must not be called outside of React Component Functions
     - must not be called in nested code statement. (eg. inside of If Statements)
+
+# Section 4 - React Essentials
+
+Why we need one parent element to return JSX.
+
+```
+return(
+    <Header />
+    <div>
+        <p>hello</p>
+    </div>
+    <Footer />
+)
+```
+
+This will show an error. We have to wrap it all inside on single div, of a parent div.
+
+This is beacause we can't return two values in JavaScript. In the above code we are trying to return 3 things.
+
+Example.
+
+```
+function add(){
+    return 2+2';
+    return 44 + 3;
+}
+```
+
+We cannot return 2 values so similarly Components also returns one JSX element.
+
+```
+React.createElement(Header)
+React.createElement(<div><p>Hello<p></div>)
+React.createElement(Footer)
+```
+
+This createElement() return only one. else we have to create muliple React.createElement()
+
+We can use one wraping element or use Fragments. To avoid something like extra div.
+
+Fragments is like a wrapper. We can import Fragment from react.
+
+But `<> </>` is simple alternative to Fragment.
+
+## Completed First Project
+
+Remarks - Completed my first React project..

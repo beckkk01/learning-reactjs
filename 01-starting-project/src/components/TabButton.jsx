@@ -1,4 +1,4 @@
-export default function TabButton({children, onSelect, isSelected}){ // destructuring props.children
+export default function TabButton({children, isSelected, ...props}){ // destructuring props.children
 
     function handleClick(){
         console.log('Hello World');
@@ -7,7 +7,7 @@ export default function TabButton({children, onSelect, isSelected}){ // destruct
     return(
         <>
             <li>
-                <button className={isSelected ? 'active' : ''} onClick={onSelect}>{children}</button>
+                <button className={isSelected ? 'active' : ''} {...props}>{children}</button>
 
                 {/* <button onClick={handleClick}>{children}</button> */}
                 {/* we have to use handleClick as a value on the prop. 
